@@ -1,26 +1,169 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revista Gânduri Bune</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-        }
-        h1 {
-            color: #1a73e8;
-            font-size: 3rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revista „Gânduri Bune" — Liceul Teoretic Ana Ipătescu Gherla</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #6b3fa0;
+  --primary-light: #f3eef9;
+  --primary-mid: #8b5fc4;
+  --secondary: #8b1a4a;
+  --secondary-light: #f9eef3;
+  --accent: #1a6b5c;
+  --accent-light: #e8f5f0;
+  --gold: #8a6500;
+  --gold-light: #fdf8e3;
+  --dark: #1a1020;
+  --text: #251a30;
+  --muted: #7a6a8a;
+  --border: #e8ddf0;
+  --bg: #fdfafc;
+  --white: #ffffff;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --radius: 16px;
+  --radius-sm: 12px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+.hero{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 40px;text-align:center}
+.logos{display:flex;align-items:center;gap:24px;margin-bottom:32px;flex-wrap:wrap;justify-content:center}
+.logo{width:100px;height:100px;border-radius:20px;object-fit:contain;box-shadow:0 4px 24px rgba(107,63,160,0.15)}
+.logo-fallback{display:none;align-items:center;justify-content:center;width:100px;height:100px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--primary-mid));font-family:var(--serif);font-size:2rem;color:white}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,2.8rem);margin-bottom:8px;color:var(--dark)}
+.hero h1 em{font-style:italic;color:var(--primary-mid)}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:600px;margin-bottom:40px}
+
+.pdf-section{width:100%;max-width:1000px;margin:0 auto;padding:0 24px 60px}
+.pdf-title{font-family:var(--serif);font-size:1.4rem;text-align:center;margin-bottom:32px;color:var(--dark)}
+.pdf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.pdf-card{display:flex;align-items:center;gap:16px;padding:20px;background:var(--white);border:2px solid var(--border);border-radius:var(--radius);text-decoration:none;transition:all 0.3s}
+.pdf-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(107,63,160,0.18);border-color:var(--primary-mid)}
+.pdf-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:var(--primary-light);color:var(--primary);flex-shrink:0}
+.pdf-info{flex:1;min-width:0}
+.pdf-name{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:4px;word-break:break-word}
+.pdf-year{font-size:0.8rem;color:var(--muted)}
+
+footer{padding:40px 24px;text-align:center;color:var(--muted)}
+footer p{font-size:0.85rem}
+footer strong{color:var(--text)}
+
+@media(max-width:600px){
+  .logos{gap:16px}
+  .logo{width:80px;height:80px}
+  .hero h1{font-size:1.5rem}
+  .pdf-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-    <h1>Hello World!</h1>
+
+<div class="hero">
+  <div class="logos">
+    <img src="logo.png" alt="Logo Liceul Teoretic Ana Ipătescu" class="logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="logo-fallback" style="display:none">AI</div>
+    <img src="logogb.png" alt="Logo Revista Gânduri Bune" class="logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="logo-fallback" style="display:none">GB</div>
+  </div>
+  <h1>Revista <em>„Gânduri Bune"</em></h1>
+  <p class="hero-sub">Liceul Teoretic „Ana Ipătescu" Gherla — Arhiva revistei școlare</p>
+</div>
+
+<div class="pdf-section">
+  <div style="text-align:center; margin-bottom:32px;">
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--primary);color:white;border-radius:50px;text-decoration:none;font-weight:600;font-size:1rem;box-shadow:0 4px 16px rgba(107,63,160,0.3);transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(107,63,160,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(107,63,160,0.3)'">
+      <i class="fas fa-folder-open"></i> Arhiva completă – Google Drive
+    </a>
+    <p style="margin-top:12px; color:var(--muted); font-size:0.9rem;">Toate numerele revistei în format PDF</p>
+  </div>
+  <h2 class="pdf-title">Arhiva Revistei</h2>
+  <div class="pdf-grid">
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">GB1 — 1939–1940</div>
+        <div class="pdf-year">4 numere (nr. 1–4)</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Gânduri Bune — 1997</div>
+        <div class="pdf-year">1997 · nr. 1</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Gânduri Bune — 1997, nr. 2</div>
+        <div class="pdf-year">1997 · nr. 2</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Gânduri Bune — 1998</div>
+        <div class="pdf-year">1998 · nr. 1</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Revista Gânduri Bune — 1972</div>
+        <div class="pdf-year">1972 · nr. 1</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Gânduri Bune — 2006</div>
+        <div class="pdf-year">2006 · An VII · nr. 16-17</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Gânduri Bune — 2008</div>
+        <div class="pdf-year">2008 · nr. 1</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Suflet de Copil — 2006</div>
+        <div class="pdf-year">Ciclul Primar · nr. 1</div>
+      </div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1yDiI6WN_2PL1xQwDcMPMnwhp4IzCxVYz/view?usp=sharing" class="pdf-card" target="_blank">
+      <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="pdf-info">
+        <div class="pdf-name">Suflet de Copil — 2008</div>
+        <div class="pdf-year">Ciclul Primar · nr. 2</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <p><strong>Revista „Gânduri Bune"</strong> · Liceul Teoretic „Ana Ipătescu" · Gherla, Cluj</p>
+  <p style="margin-top:4px">© 2026 · Toate drepturile rezervate</p>
+</footer>
+
 </body>
 </html>
